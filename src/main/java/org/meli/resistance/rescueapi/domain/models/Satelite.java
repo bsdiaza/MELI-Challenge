@@ -24,6 +24,8 @@ public enum Satelite {
     private Point coordinates;
     private double distance;
 
+    private String[] message;
+
     Satelite(String _name, Point _coordinates) {
         this.name = _name;
         this.coordinates = _coordinates;
@@ -37,6 +39,8 @@ public enum Satelite {
         return satelitesByName.keySet().stream().toList();
     }
 
+    public static void updateSatelite(Satelite satelite) { satelitesByName.replace(satelite.getName(), satelite); }
+
     public String getName() {
         return name;
     }
@@ -45,11 +49,12 @@ public enum Satelite {
         return coordinates;
     }
 
-    public double getDistance() {
-        return distance;
+    public double getDistance() { return distance; }
+
+    public void setDistance(double _distance) {
+        this.distance = _distance;
     }
 
-    public void setDistance(double distance) {
-        this.distance = distance;
-    }
+    public String[] getMessage() { return message; }
+    public void setMessage(String[] _message) { this.message = _message; }
 }

@@ -38,6 +38,34 @@ public class RescueService implements RescuePort {
         return new DecryptedRescueMessage(shipPosition, decryptedMessage);
     }
 
+    public void updateSateliteMessage(
+            String sateliteName,
+            RescueMessageRequest rescueMessageRequest
+    ) {
+        getSateliteByName(sateliteName);
+        Satelite satelite = Satelite.getSateliteByName(sateliteName);
+        satelite.setDistance(rescueMessageRequest.getDistance());
+        satelite.setMessage(rescueMessageRequest.getMessage());
+        Satelite.updateSatelite(satelite);
+    }
+
+    public DecryptedRescueMessage decryptRescueMessageSplit() {
+        List<SatRescueMessageRequest> satRescueMessagesRequest = new ArrayList<>();
+        List<String> satelitesNames = Satelite.getSatelitesNames();
+
+        for(String sateliteName: satelitesNames) {
+            Satelite satelite = Satelite.getSateliteByName(sateliteName);
+            SatRescueMessageRequest satRescueMessageRequest = new SatRescueMessageRequest(
+                    satelite.getDistance(),
+                    satelite.getMessage(),
+                    sateliteName
+            );
+            satRescueMessagesRequest.add(satRescueMessageRequest);
+        }
+
+        return decryptRescueMessage(satRescueMessagesRequest);
+    }
+
      public ArrayList<MessageInfo> getMessagesInfo(List<SatRescueMessageRequest> rescueMessages) {
          Map<String, MessageInfo> messagesInfoMap = new HashMap<>();
 
@@ -83,5 +111,16 @@ public class RescueService implements RescuePort {
         ) {
             throw new InsufficientDataException("Es necesario ingresar la información de los tres satelites para calcular su ubicación y mensaje");
         }
+    }
+
+    public Satelite getSateliteByName(
+            String sateliteName
+    ) {
+        Satelite satelite = Satelite.getSateliteByName(sateliteName);
+
+        if(satelite == null)
+            throw  new InsufficientDataException("La inforamcion del satelite no coincide con los satelites registrados: [ 'kenobi', 'Skywalker', 'Sato' ]");
+
+        return satelite;
     }
 }
