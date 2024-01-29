@@ -6,5 +6,6 @@ import java.awt.Point;
 
 @Validated
 public interface LocationPort {
-    Point GetLocation(double[] distances);
+    Point GetLocation(Double[] distances);
+
 }

@@ -11,7 +11,7 @@ import java.awt.Point;
 public class LocationService implements LocationPort {
 
     @Override
-    public Point GetLocation(double @NotNull [] distances) {
+    public Point GetLocation(Double @NotNull [] distances) {
         int satKenX = Satelite.KENOBI.getCoordinates().x;
         int satKenY = Satelite.KENOBI.getCoordinates().y;
         int satSkyX = Satelite.SKYWALKER.getCoordinates().x;

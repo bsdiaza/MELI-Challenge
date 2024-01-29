@@ -24,7 +24,7 @@ public class LocationServiceTests {
                 calculateDistance(shipCoordinates, Satelite.SKYWALKER.getCoordinates());
         double satSatoDistance =
                 calculateDistance(shipCoordinates, Satelite.SATO.getCoordinates());
-        double[] distances = new double[]{ satKenDistance, satSkyDistance, satSatoDistance };
+        Double[] distances = new Double[]{ satKenDistance, satSkyDistance, satSatoDistance };
 
         Point calculatedShipCoordinates = locationService.GetLocation(distances);
         assertEquals(shipCoordinates.x, calculatedShipCoordinates.x);
