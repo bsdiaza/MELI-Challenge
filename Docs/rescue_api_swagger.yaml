@@ -1,0 +1,218 @@
+
+"openapi": "3.0.0"
+"info":
+  "title": "Sistema de Rescate Galáctico"
+  "version": "1.0.0"
+"paths":
+  "/api/v1.0/rescue/top-secret":
+    "post":
+      "summary": "Calcular posición y mensaje de la nave espacial"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "required":
+                - "satellites"
+              "properties":
+                "satellites":
+                  "type": "array"
+                  "items":
+                    "type": "object"
+                    "required":
+                      - "name"
+                      - "distance"
+                      - "message"
+                    "properties":
+                      "name":
+                        "type": "string"
+                      "distance":
+                        "type": "number"
+                      "message":
+                        "type": "array"
+                        "items":
+                          "type": "string"
+      "responses":
+        "200":
+          "description": "Respuesta exitosa"
+          "content":
+            "application/json":
+              "schema":
+                "type": "object"
+                "properties":
+                  "position":
+                    "type": "object"
+                    "properties":
+                      "x":
+                        "type": "number"
+                      "y":
+                        "type": "number"
+                  "message":
+                    "type": "string"
+        "404":
+          "description": "Información insuficiente"
+          "content":
+            "application/json":
+              "schema":
+                "type": "object"
+                "properties":
+                  "timestamp":
+                    "type": "string"
+                    "example": "2024-01-29T18:52:40.860+00:00"
+                  "status":
+                    "type": "integer"
+                    "example": 404
+                  "error":
+                    "type": "string"
+                    "example": "Informacion Insuficiente para desencriptar el mensaje"
+                  "path":
+                    "type": "string"
+  "/api/v1.0/rescue/top-secret-split/{satellite_name}":
+    "post":
+      "summary": "Actualizar mensaje de un satélite específico"
+      "parameters":
+        -
+          "name": "satellite_name"
+          "in": "path"
+          "description": "Nombre del satélite"
+          "required": true
+          "schema":
+            "type": "string"
+      "requestBody":
+        "required": true
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "distance":
+                  "type": "number"
+                "message":
+                  "type": "array"
+                  "items":
+                    "type": "string"
+      "responses":
+        "200":
+          "description": "Mensaje actualizado correctamente"
+          "content":
+            "application/json":
+              "schema":
+                "type": "string"
+                "example": "Mensaje actualizado correctamente"
+        "404":
+          "description": "Satélite no encontrado"
+          "content":
+            "application/json":
+              "schema":
+                "type": "object"
+                "properties":
+                  "timestamp":
+                    "type": "string"
+                    "example": "2024-01-29T18:52:40.860+00:00"
+                  "status":
+                    "type": "integer"
+                    "example": 404
+                  "error":
+                    "type": "string"
+                    "example": "Not Found"
+                  "path":
+                    "type": "string"
+                    "example": "/api/v1.0/rescue/top-secret-split/{satellite_name}"
+  "/api/v1.0/rescue/top-secret-split":
+    "get":
+      "summary": "Obtener posición y mensaje calculados"
+      "responses":
+        "200":
+          "description": "Respuesta exitosa"
+          "content":
+            "application/json":
+              "schema":
+                "type": "object"
+                "properties":
+                  "position":
+                    "type": "object"
+                    "properties":
+                      "x":
+                        "type": "number"
+                      "y":
+                        "type": "number"
+                  "message":
+                    "type": "string"
+        "404":
+          "description": "Información insuficiente"
+          "content":
+            "application/json":
+              "schema":
+                "type": "object"
+                "properties":
+                  "timestamp":
+                    "type": "string"
+                    "example": "2024-01-29T18:52:40.860+00:00"
+                  "status":
+                    "type": "integer"
+                    "example": 404
+                  "error":
+                    "type": "string"
+                    "example": "Informacion Insuficiente para desencriptar el mensaje"
+                  "path":
+                    "type": "string"
+"components":
+  "schemas":
+    "decrypt-rescue-message":
+      "type": "object"
+      "required":
+        - "satellites"
+      "properties":
+        "satellites":
+          "type": "array"
+          "items":
+            "type": "object"
+            "required":
+              - "name"
+              - "distance"
+              - "message"
+            "properties":
+              "name":
+                "type": "string"
+              "distance":
+                "type": "number"
+              "message":
+                "type": "array"
+                "items":
+                  "type": "string"
+    "decrypted-rescue-message":
+      "type": "object"
+      "properties":
+        "position":
+          "type": "object"
+          "properties":
+            "x":
+              "type": "number"
+            "y":
+              "type": "number"
+        "message":
+          "type": "string"
+    "decrypt-rescue-message-fail":
+      "type": "object"
+      "properties":
+        "timestamp":
+          "type": "string"
+          "example": "2024-01-29T18:52:40.860+00:00"
+        "status":
+          "type": "integer"
+          "example": 404
+        "error":
+          "type": "string"
+          "example": "Informacion Insuficiente para desencriptar el mensaje"
+        "path":
+          "type": "string"
+    "update-message":
+      "type": "object"
+      "properties":
+        "distance":
+          "type": "number"
+        "message":
+          "type": "array"
+          "items":
+            "type": "string"
