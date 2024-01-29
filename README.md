@@ -14,11 +14,11 @@ El código fuente de la aplicación se encuentra en el directorio `src`. Aquí e
 
 Se ha implementado una API REST con tres endpoints principales:
 
-- `/topsecret`: Recibe información de los satélites a través de un POST y devuelve la ubicación y el mensaje de la nave.
+- `/api/v1.0/rescue/topsecret`: Recibe información de los satélites a través de un POST y devuelve la ubicación y el mensaje de la nave.
 
-- `/topsecret_split/{satellite_name}`: Permite actualizar la posición de un satélite específico mediante POST.
+- `/api/v1.0/rescue/topsecret_split/{satellite_name}`: Permite actualizar la posición de un satélite específico mediante POST.
 
-- `/topsecret_split`: Un endpoint GET que indica la posición y el mensaje si es posible determinarlo, con una estructura similar al ejemplo del Nivel 2. Responde con un mensaje de error si no hay suficiente información.
+- `/api/v1.0/rescue/topsecret_split`: Un endpoint GET que indica la posición y el mensaje si es posible determinarlo, con una estructura similar al ejemplo del Nivel 2. Responde con un mensaje de error si no hay suficiente información.
 
 ## Documentación Swagger con OpenAPI 3
 
