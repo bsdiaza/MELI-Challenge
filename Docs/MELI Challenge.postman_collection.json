@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "26c64a18-6d14-4071-85dc-09e9f4fc994f",
+		"name": "MELI Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9458422"
+	},
+	"item": [
+		{
+			"name": "Nivel 2",
+			"item": [
+				{
+					"name": "1. Top-secret",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"satellites\": [\r\n        {\r\n            \"name\": \"Kenobi\",\r\n            \"distance\": 670.820393249937,\r\n            \"message\": [\r\n                \"este\",\r\n                \"\",\r\n                \"\",\r\n                \"mensaje\",\r\n                \"\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Skywalker\",\r\n            \"distance\": 200,\r\n            \"message\": [\r\n                \"\",\r\n                \"es\",\r\n                \"\",\r\n                \"\",\r\n                \"secreto\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Sato\",\r\n            \"distance\": 400,\r\n            \"message\": [\r\n                \"este\",\r\n                \"\",\r\n                \"un\",\r\n                \"\",\r\n                \"\"\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1.0/rescue/top-secret",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1.0",
+								"rescue",
+								"top-secret"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1.0/rescue/top-secret",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"satellites\": [\r\n        {\r\n            \"name\": \"Kenobi\",\r\n            \"distance\": 670.820393249937,\r\n            \"message\": [\r\n                \"este\",\r\n                \"\",\r\n                \"\",\r\n                \"mensaje\",\r\n                \"\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Skywalker\",\r\n            \"distance\": 200,\r\n            \"message\": [\r\n                \"\",\r\n                \"es\",\r\n                \"\",\r\n                \"\",\r\n                \"secreto\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Sato\",\r\n            \"distance\": 400,\r\n            \"message\": [\r\n                \"este\",\r\n                \"\",\r\n                \"un\",\r\n                \"\",\r\n                \"\"\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1.0/rescue/top-secret",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1.0",
+										"rescue",
+										"top-secret"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Jan 2024 20:03:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"position\": {\n        \"x\": 100,\n        \"y\": 100\n    },\n    \"message\": \"este es un mensaje secreto\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bonus",
+			"item": [
+				{
+					"name": "2.1. Top-secret-split Kenobi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"distance\": 670.820393249937,\r\n    \"message\": [\r\n        \"este\",\r\n        \"\",\r\n        \"\",\r\n        \"mensaje\",\r\n        \"\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1.0/rescue/top-secret-split/Kenobi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1.0",
+								"rescue",
+								"top-secret-split",
+								"Kenobi"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1.0/rescue/top-secret-split/Kenobi",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"distance\": 670.820393249937,\r\n    \"message\": [\r\n        \"este\",\r\n        \"\",\r\n        \"\",\r\n        \"mensaje\",\r\n        \"\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1.0/rescue/top-secret-split/Kenobi",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1.0",
+										"rescue",
+										"top-secret-split",
+										"Kenobi"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Jan 2024 20:15:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Mensaje actualizado correctamente"
+						}
+					]
+				},
+				{
+					"name": "2.2. Top-secret-split Skywalker",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"distance\": 200,\r\n    \"message\": [\r\n        \"este\",\r\n        \"es\",\r\n        \"\",\r\n        \"\",\r\n        \"\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1.0/rescue/top-secret-split/Skywalker",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1.0",
+								"rescue",
+								"top-secret-split",
+								"Skywalker"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "2.1. Top-secret-split Kenobi Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"distance\": 200,\r\n    \"message\": [\r\n        \"este\",\r\n        \"es\",\r\n        \"\",\r\n        \"\",\r\n        \"\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1.0/rescue/top-secret-split/Skywalker",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1.0",
+										"rescue",
+										"top-secret-split",
+										"Skywalker"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Jan 2024 20:14:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Mensaje actualizado correctamente"
+						}
+					]
+				},
+				{
+					"name": "2.3. Top-secret-split Sato",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"distance\": 400,\r\n    \"message\": [\r\n        \"\",\r\n        \"\",\r\n        \"un\",\r\n        \"\",\r\n        \"bueno\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1.0/rescue/top-secret-split/Sato",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1.0",
+								"rescue",
+								"top-secret-split",
+								"Sato"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "2.1. Top-secret-split Kenobi Copy 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"distance\": 400,\r\n    \"message\": [\r\n        \"\",\r\n        \"\",\r\n        \"un\",\r\n        \"\",\r\n        \"bueno\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1.0/rescue/top-secret-split/Sato",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1.0",
+										"rescue",
+										"top-secret-split",
+										"Sato"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Jan 2024 20:14:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Mensaje actualizado correctamente"
+						}
+					]
+				},
+				{
+					"name": "3. Top-secret-split",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1.0/rescue/top-secret-split",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1.0",
+								"rescue",
+								"top-secret-split"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1.0/rescue/top-secret-split",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1.0/rescue/top-secret-split",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1.0",
+										"rescue",
+										"top-secret-split"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Jan 2024 20:15:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"position\": {\n        \"x\": 100,\n        \"y\": 100\n    },\n    \"message\": \"este es un mensaje bueno\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
